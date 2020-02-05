@@ -1,0 +1,59 @@
+package com.sust.web.controller;
+
+import java.util.List;
+
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+/*
+ * index页面的展示
+ */
+
+import com.sust.bean.TBuild;
+import com.sust.bean.TBulletin;
+import com.sust.bean.TUser;
+import com.sust.service.IBulidServcie;
+import com.sust.service.IBulletinServcie;
+
+@Controller
+public class IndexController {
+	@Autowired
+	private IBulletinServcie IBulletinServcie;
+	@Autowired
+	private IBulidServcie buildService;
+	// 进入到首页
+	@RequestMapping(value="/")
+	public String index(HttpSession session) throws Exception {
+		List<TBulletin> allBulletins;
+		try {
+			allBulletins = IBulletinServcie.selectAllBulletins();
+			List<TBuild> allBuilds = buildService.selectAllBuilds();
+			/*
+			 * for (TBuild tBuild : allBuilds) { String pic = tBuild.getPic(); String[]
+			 * split = pic.split("[|]"); session.setAttribute("pic1", split[0]);
+			 * session.setAttribute("pic2", split[1]); session.setAttribute("pic3",
+			 * split[2]); }
+			 */
+			session.setAttribute("allBuilds", allBuilds);
+			session.setAttribute("allBulletins", allBulletins);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "main.jsp";
+		
+	}
+	@RequestMapping(value="/toIndex")
+	public String toIndex() {
+		return "index.jsp";
+	}
+	
+	@RequestMapping(value="/admin")
+	public String toAdminLogin() {
+		return "login.jsp";
+	}
+
+
+}

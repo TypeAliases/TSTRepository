@@ -1,0 +1,25 @@
+package com.sust.service;
+
+import java.util.List;
+
+import com.github.pagehelper.PageInfo;
+import com.sust.bean.TBuild;
+
+public interface IBulidServcie {
+	//根据id去修改建筑信息
+	public  void updateBuildById(TBuild tBuild) throws Exception;
+	//根据id删除建筑信息
+	public void deleteBuildById(Integer id);
+	//根据id	去查询建筑
+	public TBuild selectBuildById(int id) throws Exception;
+	//查询全部建筑信息
+	public List<TBuild> selectAllBuilds() throws Exception;
+	//添加建筑信息
+	public void insertBuild(TBuild build) throws Exception;
+	//根据建筑名字查询信息
+	public List<TBuild> findBuildByName(String name) throws Exception; 
+	//通过分页查询所有建筑信息
+	PageInfo<TBuild> selectAllBuildPage(int curpage ,int row);
+	
+	public TBuild selectMakeBtBuildId(Integer id);
+}

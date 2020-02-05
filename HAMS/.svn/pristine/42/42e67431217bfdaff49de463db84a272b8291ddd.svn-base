@@ -1,0 +1,232 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<div class="row clearfix bg-white bulidmsg" style="overflow: hidden;">
+	<span class="glyphicon glyphicon-remove btn btn-danger"
+		style="float: right; margin: 5px;" onclick="colse()"></span>
+
+	<div class=" column bulidmsg-body">
+
+		<div class="page-header" align="center">
+			<h1 id="title">${Build.name }</h1>
+
+		</div>
+		<div class="page-body">
+			<div class="text-title ">基本信息</div>
+			<div class="text baseMsg ">
+				<p>
+					<label>建筑名称:</label>${Build.name }
+
+				</p>
+				<p>
+					<label>建筑地址:</label>${Build.place }
+				</p>
+				<p>
+					<label>建筑占地:</label>${Build.cover }㎡
+				</p>
+			</div>
+
+			<div class="text-title">建筑介绍</div>
+			<div class="text ">
+				<!-- <p>
+					潘祖荫故居（花间堂）作为传统古建筑，其结构形式为砖木结构，格局模仿圆明园御赐的四合院格局。潘宅位于苏州姑苏区南石子街5、6、7、8、10号，迎晓里12号。潘宅始建于清代嘉庆十五年（1810年），在道光甲午年（1834年），潘宅得到拓建，在2011年8月，潘祖荫故居被列入为苏州市新一轮老宅修复保护工程，其修缮面积近2300㎡。
+					潘祖荫故居占地广达8000㎡，建筑面积3700㎡，共三落五进。中路（正路）由门厅、轿厅（茶厅）、正厅（大厅）、内厅（攀古楼）和后庭。潘宅目前为苏州市控制保护建筑（标牌091号）。
+
+				</p>
+				<p>2014年6月，位于苏州平江路历史街区南石子街上的潘祖荫故居（简称潘宅）经过修缮后“苏州文旅花间堂•探花府”问世。转眼至2017年，经过三年的酝酿与沉淀，探花府再修缮新区域，重启大门再现贵潘风华。
+				</p> -->
+				<span>${Build.content }</span>	
+				<div class="row">
+					<div class="col-md-4">
+						<div class="thumbnail">
+							<img alt="300x200" src="./images/${Build.pic }" />
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="thumbnail">
+							<img alt="300x200" src="./images/${Build.pic }" />
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="thumbnail">
+							<img alt="300x200" src="./images/${Build.pic }" />
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="test">
+				<ul class="nav nav-tabs">
+					<li class="active"><a data-toggle="collapse" data-target="#gouzao" onclick="build_make()">建筑构造</a></li>
+					<li><a data-toggle="collapse" data-target="#cailiao" onclick="">建筑材料</a></li>
+					<li><a data-toggle="collapse" data-target="#gongyi" onclick="">建筑工艺</a></li>
+				</ul>
+
+				<div class="row collapse in " id="gouzao">
+					<div class="text">
+					<c:forEach items="${selectByBuildId}" var ="build" >
+						<c:forEach items="${build.lmake}" var="make">
+						${make.content }
+						</c:forEach>
+					
+					</c:forEach>
+					</div>
+					<div class="col-md-4">
+						<div class="thumbnail">
+							<img alt="300x200" src="images/cxq.png" />
+							<div class="caption">
+								<h3 align="center">窗下墙</h3>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="thumbnail">
+							<img alt="300x200" src="images/ysq.png" />
+							<div class="caption">
+								<h3 align="center">硬山墙</h3>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="thumbnail">
+							<img alt="300x200" src="images/ckzy.png" />
+							<div class="caption">
+								<h3 align="center">窗口戗檐</h3>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="thumbnail">
+							<img alt="300x200" src="images/dc.png" />
+							<div class="caption">
+								<h3 align="center">短窗</h3>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="thumbnail">
+							<img alt="300x200" src="images/lc.png" />
+							<div class="caption">
+								<h3 align="center">漏窗</h3>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="thumbnail">
+							<img alt="300x200" src="images/wj.png" />
+							<div class="caption">
+								<h3 align="center">屋顶形式</h3>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="row collapse" id="cailiao">
+					<div class="text">
+						<p>
+
+							琉璃瓦是采用优质矿石原料，经过筛选粉碎，高压成型，高温烧制而成。具有强度高、平整度好，吸水率低、抗折、抗冻、耐酸、耐碱、永不褪色、等显著优点。广泛适用于厂房，住宅、宾馆、别墅等工业和民用建筑，并以其造型多样，釉色质朴、多彩，环保、耐用，深得建筑大师们的推崇。西式琉璃瓦相对于传统琉璃瓦来说，既有以下特点：
+							防水性：由于西式琉璃瓦表面涂有光亮的釉层，使之不渗水，不积水。
+							强度高：西式琉璃瓦是在高温下烧制的，达到国家标准，能承受超过人体的体重，并能长时间经得起风吹日晒。
+							对各种气候的适应性：由于西式琉璃瓦独特的低吸水率的特性，使之不仅可以在南部地区使用，同时也适用于我国北方寒冷的气候，并且长时间的阳光照射下保持颜色不变。
+							适应宁静：由于西式琉璃瓦独特的工艺设计，使之具有良好的适应与降低噪音的性质，并且不长苔藓，无需人工护理。
+							丰富的异性配件：为了使屋顶结构完整美观，西式琉璃瓦带有14种不用的主瓦配件，使建筑更具艺术气息。
+							颜色选择：西式琉璃瓦的釉面颜色，经过精心配制，可做出各种颜色。并且色泽鲜明，分有光，亚光，无光三种。</p>
+						<p>
+							历史上，楠、樟、梓、椆并称为四大名木，而楠木被冠以其首，足见人们对楠木喜爱程度有多高。在中国建筑中，金丝楠木一直被视为最理想、最珍贵、最高级的建筑用材，在宫殿苑囿、坛庙陵墓中广泛应用。根据《博物要览》楠木有三种：一是香楠，木微紫而带清香，纹理也很美观；二是金丝楠（桢楠和紫楠的别名），木纹里有金丝，是楠木中最好的一种，更为难得的是，有的楠木材料结成天然山水人物花纹；三是水楠，木质较软，多用其制作家具。古代封建帝王龙椅宝座都要选用优质楠木制作，同时还是古代修建皇家宫殿、陵寝、园林等的特种材料，该树种自清代起就稀有了。晚明谢在杭《五杂俎》提到：楠木生楚蜀者，深山穷谷不知年岁，百丈之干，半埋沙土，故截以为棺，谓之沙板。佳板解之中有纹理，坚如铁石。试之者，以署月做盒，盛生肉经数宿启之，色不变也。jsnm.jpg</p>
+						<p>大理石是地壳中原有的岩石经过地壳内高温高压作用形成的变质岩，地壳的内力作用促使原来的各类岩石发生质的变化的过程。质的变化是指原来岩石的结构、构造和矿物成分的改变，经过质变形成的新的岩石类型称为变质岩。大理石主要由方解石、石灰石、蛇纹石和白云石组成，其主要成分以碳酸钙为主，约占50%以上。其他还有碳酸镁、氧化钙、氧化锰及二氧化硅等。大理石一般性质比较软，这是相对于花岗石而言的。当然，你没必要去理会这个，因为这个地质年代都是按亿来计算的，在我们有生之年，这个质变都是有限的一种变化。大理石地板砖以华美的外观以及非常实用的特点吸引了消费者的目光。与其他建筑石材不同的是，每一块的大理石地板砖纹理都是不同的，纹理清晰弯曲的大理石，光滑细腻，亮丽清新，像是带给大家一次又一次的视觉盛宴，装在居室生活里，可以把居室衬托得更加地典雅大方。</p>
+					</div>
+					<div class="col-md-4">
+						<div class="thumbnail">
+							<img alt="300x200" src="images/liuliwa.png" />
+							<div class="caption">
+								<h3 align="center">琉璃瓦</h3>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="thumbnail">
+							<img alt="300x200" src="images/jsnm.jpg" />
+							<div class="caption">
+								<h3 align="center">金丝楠木</h3>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="thumbnail">
+							<img alt="300x200" src="images/dalishi.jpg" />
+							<div class="caption">
+								<h3 align="center">大理石</h3>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="row collapse" id="gongyi">
+					<div class="text">
+						<p>
+							建筑雕饰是指雕刻、彩画、塑雕等建筑装饰，它是传统建筑装饰中不可或缺的元素。在漫长的历史发展中，建筑雕饰历经不同文化艺术风格的影响，逐渐形成了具有强烈民族特色的体系。这些雕饰艺术品作为建筑构件的一部分，起到装饰美化建筑物的作用，使得中国建筑具有独特的艺术魅力。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+						
+						<p>
+							潘宅中的楼梯形式为木楼梯。《营造法式》称木楼梯为胡梯，用于楼阁建筑之中，有两颊（楼梯梁）、促板（侧立者）、踏板（平放者）、望柱、勾阑、寻杖等构件。其构造特点是由两根斜梁（颊）支承所有其他构件。踏板与促板嵌于两颊内侧所刻槽中，并以“榥”作锚杆拉结两颊。楼梯一般上下安望柱，两颊随身各用勾阑，如楼阁高远，不便直上，亦可做成两盘（跑）或三盘式以便旋转折进。</p>
+						<p>中国传统建筑大多都是木结构，梁枋、立柱、门窗等都为木质材料。在木料上进行雕饰，以使木料本身产生立体的装饰效果。木雕一般选用质地细密坚韧，不易变形的树种如楠木、紫檀、樟木、柏木、银杏、沉香、红木、龙眼等。有的还涂色施彩用以保护木质和美化。</p>
+						<p>举架（举折）：举，即指屋架的高度
+							按建筑进深和屋面材料而定；折，即指因屋架各檩升高的幅度不一致，所以屋面横断面坡度由若干折线所组成。举架是中国传统建筑确定屋顶曲面曲度的方法。这种建筑在梁架层叠加高时，用举架方法推算屋面坡度，使屋顶的坡度越往上越陡，从而使屋面呈一条凹形优美的曲线，以利于屋面排水和檐下采光，有利于减小屋面风雪荷载。这样形成中国古代建筑独有的风貌。举架的做法在清工部《工程做法》中称为举架，在宋《营造法式》中名为举折。在工艺上略有些不同：</p>
+						<p>石雕，指用各种可雕、可刻的石头，创造出具有一定空间的可视、可触的艺术形象，借以反映社会生活、表达艺术家的审美感受、审美情感、审美理想的艺术。
+							常用的石材有花岗石、大理石、青石、砂石等。石材质量坚硬耐风化，是大型纪念性雕塑的主要材料。</p>
+					</div>
+					<div class="col-md-4">
+						<div class="thumbnail">
+							<img alt="300x200" src="images/chdk.png" />
+							<div class="caption">
+								<h3 align="center">木窗雕刻</h3>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="thumbnail">
+							<img alt="300x200" src="images/lgdk.png" />
+							<div class="caption">
+								<h3 align="center">举架</h3>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="thumbnail">
+							<img alt="300x200" src="images/sd.png" />
+							<div class="caption">
+								<h3 align="center">石雕</h3>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	$('.test .nav  li').click(function() {
+		$('.test .nav  li').removeClass('active');
+		$('.test .collapse').removeClass('in');
+		$(this).addClass('active');
+	})
+</script>

@@ -1,0 +1,4 @@
+jdbc.driver=com.mysql.jdbc.Driver
+jdbc.url=jdbc:mysql://122.51.29.117/HAMS?useUnicode=true&characterEncoding=utf-8
+jdbc.username=root
+jdbc.password=adam1997

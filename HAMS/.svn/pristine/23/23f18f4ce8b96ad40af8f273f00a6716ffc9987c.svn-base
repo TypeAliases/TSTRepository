@@ -1,0 +1,57 @@
+<div class="Materialcollection">
+	<div class="title" align="center">
+		<h2>用文字记录你出行的点滴</h2>
+	</div>
+
+
+	<div class="row clearfix">
+
+		<div class="col-md-12 column">
+			<form class="form-horizontal" role="form">
+				<div class="form-group">
+					<label for="inputEmail3" class="col-sm-1 control-label">文章标题</label>
+					<div class="col-sm-11">
+						<input type="email" class="form-control" id="inputEmail3" />
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="row clearfix">
+			<div class="col-md-12 column "
+				style="min-height: 500px; padding: 10px 30px;">
+				<div class="col-md-12 column wang"></div>
+
+			</div>
+
+		</div>
+
+		<button class="btn btn-info" style="float: right;">发布</button>
+	</div>
+</div>
+
+<script type="text/javascript">
+	var E = window.wangEditor
+
+	var editor = new E('.wang')
+	editor.customConfig.menus = [ 'head', // 标题
+	'bold', // 粗体
+	'fontSize', // 字号
+	'fontName', // 字体
+	'justify', // 对齐方式
+	'image', // 插入图片
+	'undo', // 撤销
+	'redo' // 重复
+	]
+	editor.customConfig.fontNames = [ 'Verdana' ]
+	editor.create()
+	var muenid = editor.toolbarElemId;
+	document.getElementById(muenid).style.background = "#5bc0de";
+	$('.w-e-toolbar .w-e-menu i').css({
+		"color" : "white"
+	});
+	$('.w-e-text-container').css({
+		"height" : "480px"
+	});
+
+	console.log(muenid);
+</script>

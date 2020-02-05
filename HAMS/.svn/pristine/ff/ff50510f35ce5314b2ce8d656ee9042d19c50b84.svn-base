@@ -1,0 +1,93 @@
+<div class="aboutMe">
+	<div class="row clearfix info ">
+		<div class="col-md-12 column">
+			<div class="jumbotron">
+				<h1>苏州市历史建筑信息管理系统</h1>
+				<p>该系统主要记录苏州市历史建筑的相关信息</p>
+				<p>游客可以发表自己的随笔</p>
+				<p>管理员可以对数据进行修改</p>
+				<p>这里是关于我们</p>
+				<p>
+					<button class="btn btn-primary btn-large" data-toggle="modal"
+						data-target="#myModal">留言给我们</button>
+				</p>
+			</div>
+		</div>
+		<div class="col-md-4 column">
+			<div class="versionMsg">
+				<h3>苏州市历史建筑信息管理系统</h3>
+
+				<h4>地址： 江苏省镇江市梦溪路2号</h4>
+				<h4>邮编： 015430</h4>
+				<h4>电话：0651-9087652</h4>
+				<h4>
+					<a href="mailto:somebody@qq.com">邮箱：12345555@qq.com</a>
+				</h4>
+				<h4>开发团队：&copy;江苏科技大学</h4>
+				<h4>系统版本：v1.0.3</h4>
+			</div>
+		</div>
+		<div class="col-md-2 column"></div>
+		<div class="col-md-6 column">
+			<div class="aboutMe-tag">
+				<div class="row clearfix">
+					<img alt="140x140" src="images/sutu.png" class="col-md-6 " /> <img
+						alt="140x140" src="images/sutu.jpg" class="col-md-6 " />
+				</div>
+				<blockquote>
+					<p>扫码关注，更多精彩尽在其中</p>
+					<small>苏州科技大学 <cite>苏州历史建筑信息管理系统</cite></small>
+				</blockquote>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<!-- <div class="panel modal panel-feedback" id="myMoadl" tabindex="-1"
+	role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="panel-heading" align="center">
+		<h3 class="panel-title">留言给我们</h3>
+	</div>
+	<div class="panel-body">
+		<div class="form-content">
+			<form>
+				<input type="text" name="name" placeholder="我们该怎么称呼您呢？" /> <input
+					type="text" name="tel" placeholder="请留一个我们能联系到您的联系方式" />
+				<textarea rows="1" cols="1" name="message" placeholder="说说您遇到的问题"></textarea>
+				<div class="text-center">
+					<input type="submit" class="btn-default" value="Feedback" />
+				</div>
+			</form>
+		</div>
+	</div>
+</div> -->
+
+<!-- 模态框（Modal） -->
+<div class="modal fade panel-feedback" id="myModal" tabindex="-1"
+	role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header panel-heading " align="center">
+				<button type="button" class="close" data-dismiss="modal"
+					aria-hidden="true">&times;</button>
+				<h4 class="modal-title panel-title" id="myModalLabel">留言给我们</h4>
+			</div>
+			<div class="modal-body">
+				<div class="form-content">
+					<form>
+						<input type="text" name="name" placeholder="我们该怎么称呼您呢？" /> <input
+							type="text" name="tel" placeholder="请留一个我们能联系到您的联系方式" />
+						<textarea rows="1" cols="1" name="message" placeholder="说说您遇到的问题"></textarea>
+					</form>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+				<button type="button" class="btn btn-info">Feedback</button>
+			</div>
+		</div>
+		<!-- /.modal-content -->
+	</div>
+	<!-- /.modal -->
+</div>

@@ -1,0 +1,22 @@
+package com.sust.service;
+
+import java.util.List;
+
+import com.github.pagehelper.PageInfo;
+import com.sust.bean.BuildMaterial;
+import com.sust.bean.TBuild;
+
+public interface IBuildMaterialService {
+			//增加材料信息
+			public void insertBuildMaterial(BuildMaterial buildMaterial);
+			//删除材料信息
+			public void deleteBuildMaterialById(Integer id);
+			//修改材料信息
+			public void updateBuildMaterial(BuildMaterial buildMaterial);
+			//通过id查找材料信息
+			public BuildMaterial selectById(Integer id);
+			//通过分页查询所有材料信息	
+			PageInfo<BuildMaterial> selectAllBuildMaterialPage(int curpage ,int row);
+			//
+			List<TBuild> selectMaterialByBuildId(int id);
+}

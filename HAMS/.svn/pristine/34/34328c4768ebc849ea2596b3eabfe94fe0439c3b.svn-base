@@ -1,0 +1,598 @@
+@charset "UTF-8";
+
+#mainbody {
+	margin: 0px;
+	min-height: 700px;
+	position: relative;
+	background: rgb(252, 249, 242) none repeat scroll 0% 0%;
+	cursor: pointer;
+	min-height: 700px;
+}
+
+.list-group-item {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	max-width: 100%;
+}
+
+.bulletin {
+	margin-bottom: 0px;
+}
+
+.bulletin a {
+	color: #1d3591;
+}
+
+.bulletin a:hover {
+	color: #a4191f;
+}
+
+ul.choose {
+	white-space: normal;
+	padding: 0px;
+	list-style: none;
+	max-width: 100%;
+}
+
+.panel-body>hr {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+ul.choose>li {
+	cursor: pointer;
+	list-style: none;
+	display: inline-block;
+	margin: 3px;
+	padding: 5px 8px;
+}
+
+ul.choose>li.title {
+	color: white;
+	padding: auto 10px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+}
+
+.bg-yellow {
+	background: #efad4d;
+}
+
+.bg-blue {
+	color: white;
+	background: #5bc0de;
+}
+
+.bg-green {
+	background: #5bb85d;
+}
+
+.bg-red {
+	background: #d9544f;
+}
+
+.carousel-caption {
+	left: 0px;
+	right: 0px;
+	margin-bottom: 0px;
+	background: rgba(0, 0, 0, 0.8);
+	font-size: 19px;
+	cursor: pointer;
+	padding: 10px;
+}
+
+.thumbnail>img {
+	height: 200px;
+}
+
+.login {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 500px;
+	margin-top: -200px;
+	margin-left: -250px;
+}
+
+.login a {
+	float: right;
+	margin-right: 15px;
+	cursor: pointer;
+}
+
+.main_bg {
+	background: #003262;
+	font-family: serif;
+}
+
+.title {
+	margin: 0px 0px 1px 0px;
+}
+
+.title ul {
+	padding: 5px;
+	display: inline-block;
+	margin: 0px 0px 0px 120px;
+}
+
+.title ul li {
+	display: inline-block;
+	padding: 6px 15px;
+	color: white;
+	font-size: 20px;
+	cursor: pointer;
+	margin-left: 10px;
+	font-weight: bold;
+}
+
+.title ul li:hover {
+	background: white;
+	color: #003262;
+}
+
+.title .active {
+	background: white;
+	color: #003262;
+}
+
+.user-contrllor {
+	display: inline-block;
+	color: white;
+	float: right;
+	margin-right: 20px;
+	background: none;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 18px;
+	margin-top: 16px;
+}
+
+.user-contrllor a {
+	color: white;
+	text-decoration: none;
+	cursor: default;
+}
+
+.user-contrllor a:hover {
+	color: white;
+	text-decoration: underline;
+	cursor: default;
+}
+
+.head {
+	margin-bottom: 1px;
+}
+
+.head .systime {
+	color: white;
+	font-size: 18px;
+	float: right;
+	margin-right: 30px;
+	margin-top: 31px;
+}
+
+.head .systime a {
+	color: white;
+}
+
+.head img {
+	height: 80px;
+}
+
+.container {
+	width: 99%;
+}
+
+.list-group {
+	cursor: default;
+}
+
+.footer {
+	color: black;
+	margin: 3px;
+	border-top: 1px solid #003262;
+}
+
+body {
+	margin: 0px;
+	background: #dcdbdd;
+}
+
+.container {
+	margin-top: 5px;
+}
+
+.bulid-search {
+	color: black;
+	display: block;
+	margin: 0 auto;
+	vertical-align: middle;
+	display: block;
+	width: 95%;
+}
+
+.bulid-search label {
+	font-size: 16px;
+	padding: 4px;
+	margin: 0px;
+}
+
+.bulid-search .form-group {
+	margin: 5px;
+}
+
+.search {
+	float: right !important;
+	margin: 5px;
+	margin-right: 20px;
+}
+
+.selectpicker {
+	width: auto;
+	padding: 5px 10px;
+	border: 1px solid #85c021;
+	border-radius: 3px;
+	appearance: none;
+	color: white;
+	font-family: "微软雅黑";
+	height: 100%;
+	background: white;
+	color: #000;
+	-moz-appearance: none;
+}
+
+/* select::-ms-expand {
+	display: none;
+} */
+.table-data {
+	margin: 5px auto;
+	color: #011;
+	font-size: 16px;
+	width: 95%;
+	background: white;
+}
+
+.table-data thead tr {
+	border-radius: 5px;
+	background: #337ab7;
+	color: white;
+	text-align: center;
+}
+
+.table-data tbody tr:hover {
+	background: #337ab731;
+}
+
+.msg span {
+	margin-left: 15px;
+	font-size: 14px;
+	padding: 5px;
+	font-size: 14px;
+}
+
+.bg-white {
+	background: #fff;
+}
+
+.bulidmsg  .text  p {
+	text-indent: 2em;
+	font-size: 16px;
+	margin: 5px auto;
+}
+
+.bulidmsg  .text-title {
+	color: #337ab7;
+	font-size: 2em;
+}
+
+.bulidmsg  .page-body {
+	width: 90%;
+	margin: 0px auto;
+}
+
+.bulidmsg .thumbnail h3 {
+	color: #2e308a;
+	font-size: 20px;
+}
+
+.bulidmsg .thumbnail p {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.indexSearch {
+	background: white;
+	padding: 10px;
+}
+
+.indexSearch h2 {
+	color: #337ab7;
+	margin-left: 20px;
+}
+
+.indexSearch ul {
+	list-style: none;
+	margin: 10px;
+	padding: 10px;
+}
+
+.indexSearch ul li {
+	padding: 10px;
+	background: #3c96e42e;
+	margin: 3px 0px;
+}
+
+.indexSearch ul li h3 {
+	color: #8409099e;
+	font-weight: bolder;
+}
+
+.indexSearch ul li p {
+	color: #090a64;
+	font-size: 15px;
+}
+
+.indexSearch ul .thumbnail {
+	margin-bottom: 0px;
+}
+
+.tree {
+	cursor: default;
+	position: fixed;
+	width: 20%;
+}
+
+.bulidmsg {
+	width: 90%;
+	margin: 10px auto;
+	background: white;
+}
+
+.bulidmsg-body {
+	position: relative;
+	overflow: scroll;
+	width: 90%;
+	margin: 0px auto;
+}
+
+.node {
+	margin-top: 50px;
+	list-style: disc outside;
+}
+
+.node p {
+	color: black;
+	font-size: 15px;
+}
+
+.node li {
+	margin: 5px;
+	color: #003262;
+	font-size: 20px;
+	font-family: "微软雅黑";
+}
+
+.page-header {
+	width: 90%;
+	margin: 0px auto;
+	color: #2c8249d6;
+}
+
+.page-header h1 {
+	display: inline-block;
+}
+
+.newsmsg {
+	width: 97%;
+	margin: 5px auto;
+	border-radius: 10px;
+	padding: 10px 20px;
+}
+
+.newsmsg h3 {
+	color: #bf2a2a;
+	font-size: 30px;
+	margin: 10px auto;
+}
+
+.newsmsg .author {
+	font-size: 15px;
+	margin: 5px;
+	font-weight: normal;
+	padding: 5px 12px;
+}
+
+.newsmsg .newsmsg-head {
+	margin: 10px 0px;
+}
+
+.newsmsg .newsmsg-body {
+	margin: 10px auto;
+	font-size: 16px;
+	background: #fdf4f491;
+	padding: 20px;
+}
+
+.newsmsg-body img {
+	min-height: 300px;
+	min-width: 40%;
+	max-width: 40%;
+	max-height: 300px;
+	margin: 10px auto;
+}
+
+.bulidmsg .bulidmsg-body .baseMsg {
+	color: #333;
+}
+
+.bulidmsg .bulidmsg-body label {
+	font-size: 20px !important;
+}
+
+.bulidmsg .bulidmsg-body p {
+	font-size: 20px !important;
+}
+
+.aboutMe {
+	min-height: 700px;
+	background: white;
+	margin: 10px auto;
+	width: 95%;
+	padding: 10px 20px;
+	border-radius: 10px;
+}
+
+.aboutMe .info {
+	margin: 10px;
+}
+
+.aboutMe-tag {
+	border: 3px solid #eeeeee;
+}
+
+.form-content {
+	padding: 25px;
+}
+
+.form-content input[type=text], select, textarea {
+	border: none;
+	width: 100%;
+	display: block;
+	margin-bottom: 20px;
+	height: 40px;
+	line-hegiht: 40px;
+	padding: 0;
+	border-bottom: 1px solid #e9e9e9;
+	font-weight: 300;
+	color: #989898;
+	transition: all 0.3s ease;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+}
+
+.form-content .btn-default {
+	background-color: #00b2ce;
+	line-height: 50px;
+	height: 50px;
+	color: #fff;
+	text-transform: uppercase;
+	border: none;
+	font-size: 13px;
+	font-weight: 600;
+	cursor: pointer;
+	padding: 0 40px;
+	margin: 0;
+	border-radius: 5px;
+	display: inline-block;
+}
+
+.panel-feedback {
+	width: 45%;
+	border-color: #00b2ce;
+	margin: 0 auto;
+}
+
+.panel-feedback .panel-heading {
+	background: #00b2ce;
+}
+
+.panel-feedback .panel-title {
+	color: white;
+	font-size: 18px;
+	padding: 10px;
+}
+
+.contact-info .contact-address {
+	padding: 20px;
+	border-right: 1px solid #f3f3f3;
+}
+
+.contact-info h3 {
+	font-size: 24px;
+	color: #304254;
+	font-weight: 300;
+	margin: 0;
+}
+
+.contact-info i.icon {
+	color: #fff;
+	background-color: #00b2ce;
+	text-align: center;
+	line-height: 37px;
+	width: 37px;
+	margin-right: 15px;
+	border-radius: 50%;
+	webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	display: inline-block;
+	vertical-align: top;
+	font-size: 16px;
+}
+
+.contact-info p {
+	vertical-align: top;
+	display: inline-block;
+	width: 82%;
+	font-size: 16px;
+	line-height: 32px;
+	color: #768ba2;
+	font-weight: 300;
+}
+
+.contact-info p.social {
+	margin-left: 55px;
+}
+
+.versionMsg {
+	color: #000000;
+	padding: 10px;
+}
+
+.versionMsg h3 {
+	margin: 20px 10px;
+}
+
+.versionMsg h4 {
+	margin: 10px;
+	font-weight: lighter;
+	font-weight: lighter;
+}
+
+.newsList {
+	min-height: 700px;
+	border-radius: 5px;
+	width: 95%;
+	margin: 10px auto;
+	background: #fff;
+	padding: 10px 20px;
+	border-radius: 5px;
+}
+
+.newsList-from {
+	padding: 10px 20px;
+	border-radius: 5px;
+	margin: 10px auto;
+	background: #fff;
+}
+
+.Materialcollection {
+	width: 95%;
+	margin: 10px auto;
+	background: #fff;
+	padding: 10px 20px;
+	border-radius: 5px;
+}
+
+.Materialcollection .title h2 {
+	margin: 10px;
+	color: #96b97d;
+	font-family: 'Times New Roman';
+}
+
+.msg {
+	color: red;
+	margin-left: 30px;
+}

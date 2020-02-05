@@ -1,0 +1,96 @@
+package com.sust.web.controller;
+
+import java.util.List;
+
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.sust.bean.BuildImage;
+import com.sust.bean.BuildMake;
+import com.sust.bean.BuildMaterial;
+import com.sust.bean.TBuild;
+import com.sust.bean.TMake;
+import com.sust.bean.TMaterial;
+import com.sust.service.IBuildMakeService;
+import com.sust.service.IBuildMaterialService;
+import com.sust.service.IBuildTechniqueService;
+import com.sust.service.IBulidServcie;
+import com.sust.service.IMakeService;
+
+
+@Controller
+public class BuildController {
+	@Autowired 
+	private IBulidServcie buildService;
+	@Autowired
+	private IMakeService makeService;
+	
+	@Autowired
+	private IBuildMaterialService buildMaterialService;
+	@Autowired
+	private IBuildTechniqueService buildTechniqueService;
+	
+	@Autowired
+	private IBuildMakeService buildMakeService;
+	@RequestMapping("/bulidshow")
+	public String showBuild(Model model) {
+		try {
+			List<TBuild> AllBuilds = buildService.selectAllBuilds();
+			/*for (TBuild tBuild : AllBuilds) {
+				TMake tMake = makeService.selectMakeById(tBuild.getMakeId());
+				tBuild.setTmake(tMake);
+			}*/
+			model.addAttribute("AllBuilds", AllBuilds);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "build.jsp";
+	}
+	
+	@RequestMapping("/findBuildByName")
+	public String findBuildByName(String buildname,Model model) {
+		System.out.println("name:"+buildname);
+		try {
+			List<TBuild> AllBuilds = buildService.findBuildByName(buildname);
+			model.addAttribute("AllBuilds", AllBuilds);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "build.jsp";
+	}
+	@RequestMapping("/findBuildById")
+	public String findBuildById(int id,Model model) {
+		System.out.println("id"+id);
+		try {
+			TBuild Build = buildService.selectBuildById(id);
+			
+			List<TBuild> selectByBuildId = buildMakeService.selectByBuildId(id);
+			List<TBuild> selectMaterialByBuildId = buildMaterialService.selectMaterialByBuildId(id);
+			for (TBuild tBuild : selectMaterialByBuildId) {
+				List<TMaterial> lmaterrial = tBuild.getLmaterrial();
+				for (TMaterial lmaterrial1 : lmaterrial) {
+					
+					System.out.println("....."+lmaterrial1.getName());
+				}
+			}
+			List<TBuild> selectTechniqueByBuildId = buildTechniqueService.selectTechniqueByBuildId(id);
+			List<BuildImage> selectImageByBuildId = buildMakeService.selectImageByBuildId(id);
+			model.addAttribute("selectImageByBuildId", selectImageByBuildId);
+			model.addAttribute("selectByBuildId", selectByBuildId);
+			model.addAttribute("Build", Build);
+			model.addAttribute("selectMaterialByBuildId", selectMaterialByBuildId);
+			model.addAttribute("selectTechniqueByBuildId", selectTechniqueByBuildId);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "bulidmsg.jsp";
+	}
+	
+	
+	
+}

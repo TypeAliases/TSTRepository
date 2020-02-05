@@ -1,0 +1,87 @@
+package com.sust.service.impl;
+
+import java.util.Comparator;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import com.sust.bean.TBuild;
+import com.sust.bean.TBuildExample;
+import com.sust.bean.TUser;
+import com.sust.bean.TUserExample;
+import com.sust.dao.TBuildMapper;
+import com.sust.dao.TUserMapper;
+import com.sust.service.IBulidServcie;
+@Service
+public class BuildServiceImpl implements IBulidServcie{
+	@Autowired
+	private TBuildMapper tBuildMapper;
+	@Autowired
+	private TUserMapper tUserMapper;
+	
+	@Override
+	public void updateBuildById(TBuild tBuild) throws Exception {
+		tBuildMapper.updateContentByid(tBuild);
+	}
+
+	@Override
+	public TBuild selectBuildById(int id) throws Exception {
+		TBuildExample tBuildExample=new TBuildExample();
+		tBuildExample.createCriteria().andIdEqualTo(id);
+		List<TBuild> selectTBuildById = tBuildMapper.selectByExampleWithBLOBs(tBuildExample);
+		TBuild tBuild = selectTBuildById.get(0);
+		TUserExample tUserExample=new TUserExample();
+		tUserExample.createCriteria().andIdEqualTo(tBuild.getUserId());
+		List<TUser> selectTUserById = tUserMapper.selectByExample(tUserExample);
+		TUser tUser = selectTUserById.get(0);
+		tBuild.setUser(tUser);
+		return tBuild;
+	}
+
+	@Override
+	public List<TBuild> selectAllBuilds() throws Exception {
+		TBuildExample tBuildExample=new TBuildExample();
+		tBuildExample.createCriteria().andIdIsNotNull();
+		List<TBuild> selectAllTbuild = tBuildMapper.selectByExampleWithBLOBs(tBuildExample);
+		selectAllTbuild.sort(new Comparator<TBuild>() {
+
+			@Override
+			public int compare(TBuild o1, TBuild o2) {
+				return o2.getPageviews()-o1.getPageviews();
+			}
+		});
+		return selectAllTbuild;
+	}
+
+	@Override
+	public void deleteBuildById(Integer id) {
+		TBuildExample tBuildExample=new TBuildExample();
+		tBuildExample.createCriteria().andIdEqualTo(id);
+		tBuildMapper.deleteByExample(tBuildExample);
+		
+	}
+
+	@Override	
+	public void insertBuild(TBuild build) throws Exception{
+		tBuildMapper.insert(build);
+	}
+	public List<TBuild> findBuildByName(String name){
+		TBuildExample tBuildExample=new TBuildExample();
+		tBuildExample.createCriteria().andNameLike("%"+name+"%");
+		List<TBuild> selectBuildByNameLike = tBuildMapper.selectByExample(tBuildExample);
+		return selectBuildByNameLike;
+	}
+
+	@Override
+	public PageInfo<TBuild> selectAllBuildPage(int curpage, int row) {
+		PageHelper.startPage(curpage, row);
+		TBuildExample tBuildExample=new TBuildExample();
+		tBuildExample.createCriteria().andIdIsNotNull();
+		List<TBuild> selectAllTbuild = tBuildMapper.selectByExample(tBuildExample);
+		PageInfo<TBuild> pageInfo = new PageInfo<TBuild>(selectAllTbuild);
+		return pageInfo;
+	}
+}

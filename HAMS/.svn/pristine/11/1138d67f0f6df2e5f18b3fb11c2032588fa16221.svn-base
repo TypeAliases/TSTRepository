@@ -1,0 +1,55 @@
+package com.custTest;
+
+import java.util.List;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.web.WebAppConfiguration;
+
+import com.sust.bean.BuildMake;
+import com.sust.bean.TBuild;
+import com.sust.bean.TBulletin;
+import com.sust.bean.TUser;
+import com.sust.dao.TBulletinMapper;
+import com.sust.service.IBuildMakeService;
+import com.sust.service.IBulidServcie;
+import com.sust.service.IBulletinServcie;
+import com.sust.service.ILogServcie;
+import com.sust.service.impl.BulletinImpl;
+@WebAppConfiguration
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations = {"classpath:spring/spring-dao.xml",
+									"classpath:spring/spring-service.xml",
+									"classpath:spring/spring-web.xml"})
+public class Test1 {
+	
+	/*@Autowired 
+	private IBulidServcie buildService;*/
+	@Autowired
+	//private IBulletinServcie BulletinServcieImpl;
+	private IBulidServcie buildService;
+	
+	@Autowired
+	private IBuildMakeService buildmake;
+	@Test
+	public void BulletinIml() throws Exception {
+		//List<TBuild> selectAllBuilds = buildService.selectAllBuilds();
+		//ibulletinServcie.selectTBulletinByDate();
+		/*for (TBuild tBuild : selectAllBuilds) {
+			System.out.println(tBuild);
+		}*/
+		/*List<TBulletin> selectAllBulletins = BulletinServcieImpl.selectAllBulletins();
+		for (TBulletin tBulletin : selectAllBulletins) {
+			System.out.println(tBulletin);
+		}*/
+//		TBuild selectBuildById = buildService.selectBuildById(1);
+//		TUser user = selectBuildById.getUser();
+//		System.out.println(user);
+		
+		BuildMake buildMake2 = buildmake.selectById(8);
+		System.out.println(buildMake2);
+	}
+}
